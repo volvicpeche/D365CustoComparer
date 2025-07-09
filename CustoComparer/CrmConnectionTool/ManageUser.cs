@@ -1,4 +1,3 @@
-﻿using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Client;
 using Microsoft.Xrm.Sdk.Discovery;
@@ -7,10 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel.Description;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Services.Description;
-
 namespace CrmConnectionTool
 {
     public class ManageUser
