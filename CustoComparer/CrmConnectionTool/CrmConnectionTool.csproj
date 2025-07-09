@@ -240,7 +240,6 @@
     <Reference Include="System.Xml.XmlDocument" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compare2.cs" />
     <Compile Include="CompareFormCustomization.cs" />
     <Compile Include="ManageUser.cs" />
     <Compile Include="Program.cs" />
