@@ -441,6 +441,28 @@ namespace CrmConnectionTool
             }
             return elements;
         }
+        static Dictionary<string, Dictionary<string, string>> ExtractFieldTranslations(string formXml)
+        {
+            var result = new Dictionary<string, Dictionary<string, string>>();
+            var doc = new XmlDocument();
+            doc.LoadXml(formXml);
+            foreach (XmlNode ctrl in doc.SelectNodes("//control[@datafieldname]"))
+            {
+                var name = ctrl.Attributes?["datafieldname"]?.Value;
+                if (string.IsNullOrEmpty(name)) continue;
+                var labels = new Dictionary<string, string>();
+                foreach (XmlNode label in ctrl.SelectNodes(".//labels/label"))
+                {
+                    string lang = label.Attributes?["languagecode"]?.Value ?? "default";
+                    string desc = label.Attributes?["description"]?.Value ?? string.Empty;
+                    labels[lang] = desc;
+                }
+                if (labels.Count > 0)
+                    result[name] = labels;
+            }
+            return result;
+        }
+
 
         // Méthode pour comparer les labels entre deux formulaires
         static void CompareLabels(List<LabelElement> labels1, List<LabelElement> labels2)
@@ -767,6 +789,9 @@ namespace CrmConnectionTool
                     var labels2 = ExtractLabelsFromFormXml(formXml2);
                     CompareLabels(labels1, labels2);
 
+                    var trans1 = ExtractFieldTranslations(formXml1);
+                    var trans2 = ExtractFieldTranslations(formXml2);
+                    ExcelExport.ExportDifferences($"{entity}_{form}_diff.xlsx", fields1, fields2, trans1, trans2);
                     Console.WriteLine("\nComparison completed successfully.\n");
 
                 }
