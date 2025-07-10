@@ -238,7 +238,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="DocumentFormat.OpenXml">
-      <HintPath>..\packages\DocumentFormat.OpenXml.2.19.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.19.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XmlDocument" />
   </ItemGroup>
