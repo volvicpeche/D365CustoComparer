@@ -1,21 +1,13 @@
-﻿using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Tooling.Connector;
 using System;
-using System.Activities.Statements;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Policy;
-using System.ServiceModel.Description;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Linq;
-using static System.Net.WebRequestMethods;
-
 namespace CrmConnectionTool
 {
     public class CompareFormCustomization
