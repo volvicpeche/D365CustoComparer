@@ -1,3 +1,4 @@
+
 # CrmConnectionTool
 
 CrmConnectionTool is a small console utility used to compare customizations between two Microsoft Dynamics 365 environments. It connects to two organizations using connection strings and outputs differences in forms or view definitions.
@@ -27,4 +28,5 @@ Logs are written using log4net to the path configured in `log4net.config` (defau
 ## Usage
 
 After building, run the executable from a command prompt. The tool will connect to both organizations and compare the specified forms in `Program.cs`.
+
 
